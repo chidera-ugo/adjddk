@@ -1,0 +1,59 @@
+@tailwind components;
+
+@layer components {
+  .prismic_title > p {
+    @apply font-semibold text-neutral-main;
+  }
+
+  .rich-text > h3 {
+    @apply text-xl 640:text-4xl mt-20 font-normal mb-5 text-left;
+  }
+
+  .rich-text > p {
+    @apply text-neutral-main font-normal leading-[26px] mb-5 text-base;
+  }
+
+  .rich-text > p > strong {
+    @apply font-medium;
+  }
+
+  .rich-text > p > a {
+    @apply text-primary-main hover:underline;
+  }
+
+  .rich-text > ul {
+    @apply list-disc list_parent;
+  }
+
+  .rich-text > ol {
+    @apply list-decimal list_parent;
+  }
+
+  .rich-text > p > em > strong {
+    @apply text-white not-italic font-medium;
+  }
+
+  .list_item {
+    @apply text-neutral-main text-base font-normal;
+  }
+
+  .list_parent {
+    @apply pl-5 640:pl-10;
+  }
+
+  .rich-text > ol > li {
+    @apply list_item;
+  }
+
+  .rich-text > ol > li > strong {
+    @apply font-semibold;
+  }
+
+  .rich-text > ul > li {
+    @apply list_item;
+  }
+
+  .rich-text > ul > li > strong {
+    @apply font-semibold;
+  }
+}

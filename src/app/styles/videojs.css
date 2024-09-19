@@ -1,0 +1,29 @@
+.video_player_default {
+  transform: perspective(250px) rotateX(8deg);
+}
+
+.video_player_animation {
+  animation: video 0.5s linear;
+}
+
+@media only screen and (max-width: 640px) {
+  .video_player_default {
+    transform: perspective(0px) rotateX(0deg);
+  }
+
+  .video_player_animation {
+    animation: none;
+  }
+}
+
+@keyframes video {
+  0% {
+    transform: perspective(250px) rotateX(8deg) scale(1);
+  }
+  60% {
+    transform: perspective(250px) rotateX(4deg) scale(0.85);
+  }
+  100% {
+    transform: perspective(250px) rotateX(0deg) scale(1);
+  }
+}

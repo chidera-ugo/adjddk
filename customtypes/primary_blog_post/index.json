@@ -1,0 +1,25 @@
+{
+  "id": "primary_blog_post",
+  "label": "primary blog post",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "post": {
+        "type": "Link",
+        "config": {
+          "label": "post",
+          "select": "document"
+        }
+      },
+      "label": {
+        "type": "Text",
+        "config": {
+          "label": "label",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

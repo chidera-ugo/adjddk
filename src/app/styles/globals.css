@@ -1,0 +1,189 @@
+@import './prismic.css';
+@import './pills.css';
+@import './videojs.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+body:has(.no-scroll) {
+  overflow: hidden !important;
+}
+
+@layer base {
+  .app-container {
+    @apply max-w-[1168px] mx-auto px-4 480:px-8;
+  }
+
+  h1 {
+    @apply font-bold leading-[80px];
+  }
+
+  h4 {
+    @apply font-semibold -tracking-[2px] 640:-tracking-[3px] text-neutral-main text-[34px] 640:text-[54px] leading-[40px] 640:leading-[60px] 768:text-[64px] 768:leading-[70px];
+  }
+
+  h5 {
+    @apply font-semibold -tracking-[1px] 640:-tracking-[2px] text-neutral-main text-[34px] leading-[44px] 640:text-[44px] 640:leading-[54px] 1180:text-[54px] 1180:leading-[60px];
+  }
+
+  h6 {
+    @apply text-[20px] font-semibold text-neutral-main;
+  }
+
+  p {
+    @apply text-neutral-main font-normal;
+  }
+
+  .title {
+    @apply text-[33px] 640:text-[54px] 1180:text-[70px] leading-[40px] 640:leading-[60px] 1180:leading-[80px];
+  }
+
+  .subtitle {
+    @apply text-neutral-main text-base 768:leading-[30px] 768:text-lg font-normal;
+  }
+
+  ul.list {
+    @apply my-1 list-disc pl-5 640:pl-7;
+  }
+
+  li {
+    @apply text-base my-2;
+  }
+}
+
+@layer components {
+  select,
+  textarea,
+  .input {
+    @apply _input min-h-[44px];
+  }
+
+  ._input {
+    @apply block appearance-none rounded-lg border border-neutral-100 bg-neutral-150 px-3.5 text-neutral-1000 placeholder-neutral-400 transition-colors focus:border-neutral-400 focus:outline-none focus:ring-4 focus:ring-neutral-200;
+    box-shadow:
+      0 2px 5px rgba(103, 110, 118, 0.08),
+      0 0 0 1px rgba(103, 110, 118, 0.16),
+      0 1px 1px rgba(0, 0, 0, 0.12);
+  }
+
+  label {
+    @apply mb-2 text-left text-sm text-neutral-400;
+  }
+
+  button,
+  input {
+    @apply disabled:opacity-50;
+  }
+
+  .nav_item {
+    @apply tracking-[0.1px] cursor-pointer relative z-10 px-2 1180:px-5 font-[540] flex h-full my-auto text-sm text-neutral-main hover:text-primary-main;
+  }
+
+  .mobile_menu_item {
+    @apply w-full py-2 px-4 text-sm font-medium x-between hover:text-primary-main;
+  }
+
+  .footer_link_item {
+    @apply block hover:text-white py-[9px] text-white text-opacity-60 font-light text-sm 640:text-base;
+  }
+
+  .footer_links_header {
+    @apply text-white font-normal mb-5 text-sm 640:text-base uppercase;
+  }
+
+  .input-error {
+    @apply mt-1 text-left text-sm text-red-500;
+  }
+
+  button,
+  a,
+  .no-highlight {
+    @apply focus:outline-none;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .button {
+    @apply transition-colors text-xs 560:text-sm font-semibold duration-300 rounded-md px-4 560:px-6 h-8 560:h-8;
+  }
+
+  .outline-button {
+    @apply border border-neutral-100 hover:border-black text-neutral-main bg-white button;
+  }
+
+  .primary-button {
+    @apply text-white button hover:bg-primary-800 bg-primary-main;
+  }
+
+  .alt-button {
+    @apply smooth block h-11 rounded-full px-4 text-center text-sm transition-colors focus:ring-2;
+  }
+
+  .primary_button {
+    @apply alt-button bg-primary-main font-medium text-white ring-primary-main ring-opacity-30 hover:bg-primary-main;
+  }
+
+  .secondary_button {
+    @apply alt-button border border-transparent bg-neutral-70 font-semibold text-neutral-main;
+  }
+
+  .white_button {
+    @apply alt-button border border-neutral-200 bg-white font-semibold text-neutral-main;
+  }
+
+  .dark_button {
+    @apply alt-button border border-black bg-black px-4 text-center text-sm font-medium text-white transition-colors hover:bg-neutral-900;
+  }
+
+  .text-link {
+    @apply text-primary-main font-medium;
+  }
+
+  .spinner {
+    @apply h-5 w-5 animate-spin;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-md bg-neutral-300;
+  }
+
+  .skeleton-error {
+    @apply rounded-md bg-red-100;
+  }
+
+  .card {
+    @apply w-full rounded-[10px] border border-neutral-310 p-3 640:p-4;
+  }
+}
+
+@layer utilities {
+  .x-between {
+    @apply flex align-middle justify-between;
+  }
+
+  .y-between {
+    @apply flex flex-col align-middle justify-between;
+  }
+
+  .y-center {
+    @apply flex flex-col align-middle justify-center;
+  }
+
+  .x-center {
+    @apply flex align-middle justify-center;
+  }
+
+  .smooth {
+    @apply duration-[150ms] ease-linear;
+  }
+}

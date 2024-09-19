@@ -1,0 +1,26 @@
+{
+  "id": "slot",
+  "type": "SharedSlice",
+  "name": "Slot",
+  "description": "Slot",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "type": {
+          "type": "Text",
+          "config": {
+            "label": "type",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
