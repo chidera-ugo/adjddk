@@ -1,7 +1,5 @@
 import { AppCtaButton } from '@/components/buttons/AppCtaButton';
 import { navigationLinks } from '@/components/core/Header';
-import { industrySolutionsLinks } from '@/components/core/Header/navigation/IndustrySolutionsGroup';
-import { productGroupLinks } from '@/components/core/Header/navigation/ProductGroup';
 import { MobileMenuWrapper } from '@/components/modal/ModalWrapper';
 import { ChevronDown } from '@/components/svgs/ChevronDown';
 import { Cancel, Hamburger } from '@/components/svgs/Navigation';
@@ -27,28 +25,7 @@ export const MobileMenu = ({
 
   const [activeGroup, setActiveGroup] = useState('');
 
-  const subNavItems =
-    activeGroup === 'Product'
-      ? productGroupLinks.map(({ title }) => ({
-          label: title,
-          url: `/product/${hyphenateString(title)}`,
-        }))
-      : activeGroup === 'Industry Solutions'
-        ? [
-            ...industrySolutionsLinks.links?.['company size'].map((title) => ({
-              label: title,
-              url: `/industry-solutions/${hyphenateString(
-                industrySolutionsLinks.modifier(title),
-              )}`,
-            })),
-            ...industrySolutionsLinks.links?.industry.map((title) => ({
-              label: title,
-              url: `/industry-solutions/${hyphenateString(
-                industrySolutionsLinks.modifier(title),
-              )}`,
-            })),
-          ]
-        : [];
+  const subNavItems: any[] = [];
 
   function close() {
     setShowMobileMenu(false);
